@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brest</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <link rel="stylesheet" href="leaflet-routing-machine.css"/>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <script src="leaflet-routing-machine.js"></script>
+
+    <link href="brestProjectCSS.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
+    <link href="FontAwesome/css/all.css" rel="stylesheet">
+</head>
+<body>
+<div id="blocked"></div>
+<header>
+    <div class="logo">
+        <div><i class="fas fa-map-signs"></i></div>
+        BREST-guide
+    </div>
+    <div class="enterForm" id="headerBlock">
+        <div id="enter">Enter</div>
+        <div id="registration">Registration</div>
+    </div>
+</header>
+<div class="mainField">
+    <div class="list" id="list">
+        <div class="listName">
+            <div class="logo">Let's start!</div>
+            <div class="exit" id="exit"><i class="far fa-times-circle"></i></div>
+        </div>
+        <div>Choose places you want to watch</div>
+        <!--        Start Tabs-->
+        <div class="wrapper">
+            <div class="tabs">
+                <div class="tabs_nav tabs-nav">
+                    <div class="tabs-nav_item is_active" data-tab-name="tab-1">Sights</div>
+                    <div class="tabs-nav_item" data-tab-name="tab-2">Banks</div>
+                    <div class="tabs-nav_item" data-tab-name="tab-3">Cafes</div>
+                    <div class="tabs-nav_item" data-tab-name="tab-4">Shops</div>
+                    <div class="tabs-nav_item" data-tab-name="tab-5">Events</div>
+                </div>
+                <div class="tabs_content">
+                    <div class="tab is_active tab-1">
+                        <div class="tabElement logo"><label><img src="image/icon/greenMarker.png" alt="sight"
+                                                                 class="imgTabElement"> Show only
+                            <input type="checkbox" name="deleteGreenMarker" id="deleteGreenMarker"></label></div>
+                    </div>
+                    <div class="tab tab-2">
+                        <div class="tabElement logo"><img src="image/icon/violetMarker.png" alt="bank"
+                                                          class="imgTabElement"> Show only
+                            <input type="checkbox" name="deleteVioletMarker" id="deleteVioletMarker"></div>
+                    </div>
+                    <div class="tab tab-3">
+                        <div class="tabElement logo"><img src="image/icon/pinkMarker.png" alt="cafe"
+                                                          class="imgTabElement"> Show only
+                            <input type="checkbox" name="deletePinkMarker" id="deletePinkMarker"></div>
+                    </div>
+                    <div class="tab tab-4">
+                        <div class="tabElement logo"><img src="image/icon/lightgreenMarker.png" alt="shop"
+                                                          class="imgTabElement"> Show only
+                            <input type="checkbox" name="deleteLightGreenMarker" id="deleteLightGreenMarker"></div>
+                    </div>
+                    <div class="tab tab-5">
+                        <div class="tabElement logo"><img src="image/icon/purpulMarker.png" alt="event"
+                                                          class="imgTabElement"> Delete markers
+                            <input type="checkbox" name="deletePurpulMarker" id="deletePurpulMarker"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--        End Tabs-->
+    </div>
+    <!--MAP-->
+    <div id="mapid"></div>
+    <!--    Visual Object-->
+    <div class="visualObject"></div>
+    <!--    ToDoList-->
+    <div class="userList" id="userList">
+        <div class="logo">Your List</div>
+        <div>Here you can see objects you choose</div>
+        <div class="tabElement logo"><img src="image/icon/blueMarker.png" alt="event"
+                                          class="imgTabElement"> Chosen markers
+            <input type="checkbox" name="showBlueMarker" id="showBlueMarker"></div>
+        <div class="containerUser"></div>
+    </div>
+</div>
+<footer>
+    <div>&copy; 2021 | made with <i class="fas fa-heart"></i></div>
+</footer>
+<script type="text/javascript" src="brestProjectJS.js"></script>
+</body>
+</html>

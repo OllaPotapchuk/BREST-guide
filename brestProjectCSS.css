@@ -1,0 +1,549 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+#mapid {
+    height: 93vh;
+    width: 100%
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: forestgreen;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+header > div {
+    display: flex;
+    margin: auto;
+}
+
+.logo {
+    font: 25px 'Lobster Two', cursive;
+}
+
+.logo > div:first-child {
+    padding-right: 10px
+}
+
+.enterForm {
+    font-size: 20px;
+}
+
+.enterForm div {
+    margin: 0 10px
+}
+
+.enterForm > div:first-child, .leftBorderStyle {
+    border-left: solid 3px white;
+    padding-left: 20px
+}
+
+#enter:hover, #registration:hover, #exit:hover {
+    cursor: pointer;
+    color: #58C497;
+}
+
+/*Forms Enter and Registration*/
+.blocked {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    position: fixed;
+    z-index: 10000
+}
+
+.formEnter, .successReg {
+    width: 25%;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 10100;
+    position: fixed;
+    left: 37%;
+    top: 20%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: forestgreen;
+}
+
+.formEnter > div:first-child {
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    color: forestgreen;
+}
+
+.formEnter label {
+    width: 80%;
+    margin: 0 auto
+}
+
+.formEnter label input {
+    width: 100%;
+    border: solid 1px forestgreen;
+    outline: none;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 18px
+}
+
+.formEnter label div {
+    font-size: 18px;
+    color: forestgreen;
+    margin-top: 10px
+}
+
+.button, .buttonAdd {
+    width: 50%;
+    margin: 10px auto 0 auto;
+    height: 30px;
+    font-size: 18px;
+    background-color: white;
+    color: forestgreen;
+    outline: none;
+    border: solid 1px forestgreen;
+    border-radius: 5px;
+}
+
+.button:hover, .buttonAdd:hover {
+    cursor: pointer;
+    background-color: rgba(34, 139, 34, 0.7);
+    color: white
+}
+
+.button2 {
+    border-color: transparent;
+    text-decoration: underline forestgreen;
+    background-color: white;
+    cursor: pointer;
+    color: forestgreen;
+    outline: none;
+}
+
+.button2:hover {
+    font-weight: bold;
+}
+
+.successReg {
+    font-size: 20px
+}
+
+.buttonX {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+}
+
+.buttonX:hover {
+    color: rgba(34, 139, 34, 0.7);
+}
+
+.buttonAdd {
+    width: 40%;
+    margin: 10px 20px 0 20px;
+    font-size: 15px
+}
+
+.buttonRoute {
+    margin: 10px 20px 0 20px;
+}
+
+/*Fields Lists*/
+.mainField {
+    display: flex;
+}
+
+.list {
+    width: 40%;
+    height: 100%;
+    z-index: 1005
+}
+
+.list1 {
+    width: 2%
+}
+
+.list > div, .userList > div {
+    padding: 10px
+}
+
+.userList {
+    width: 40%;
+}
+
+.listName {
+    display: flex;
+    justify-content: space-between;
+}
+
+.exit {
+    font-size: 20px
+}
+
+.exit:hover {
+    cursor: pointer;
+
+}
+
+.icon {
+    width: 80%;
+    padding: 2px;
+}
+
+.choose {
+    font-family: 'Lobster Two', cursive;
+    margin: auto;
+    text-align: center;
+}
+
+/*Left List Tabs*/
+.tabs-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.tabs-nav_item {
+    padding: 10px;
+    border: 1px solid forestgreen;
+    cursor: pointer;
+    flex: 1;
+    background-color: rgba(34, 139, 34, 0.2);
+    text-align: center;
+}
+
+.tabs-nav_item:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.tabs-nav_item:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.tab {
+    display: none;
+    height: 68vh;
+    overflow: auto;
+    z-index: 0;
+}
+
+.tab.is_active {
+    display: block;
+}
+
+.tabs-nav_item.is_active {
+    color: forestgreen;
+    font-weight: bold;
+    background-color: white
+}
+
+.tabElement {
+    padding: 10px 5px;
+    border-bottom: 1px solid forestgreen;
+    cursor: default;
+}
+
+.tabElement label, .tabElement input {
+    cursor: pointer;
+}
+
+.imgTabElement {
+    width: 50px
+}
+
+.imgMarker {
+    width: 30px
+}
+
+.tabElementToggle {
+    background-color: rgba(255, 165, 0, 0.4);
+}
+
+.chooseColor {
+    background-color: rgba(34, 139, 34, 0.2)
+}
+
+/*MAP*/
+.leaflet-control-container {
+    position: absolute;
+    right: 56px
+}
+
+/*Visual*/
+.visualObject {
+    height: 210px;
+    width: 50%;
+    background-color: white;
+    position: fixed;
+    top: 70%;
+    left: 25%;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.welcome {
+    text-align: center;
+    color: forestgreen;
+    font: 94px 'Lobster Two', cursive;
+    position: relative;
+    top: 5%;
+}
+
+.flexF {
+    display: flex;
+}
+
+.imgObject {
+    width: 190px;
+    height: 190px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.imgFotoObject {
+    width: 100%;
+    border-radius: 5px
+}
+
+.infoObject {
+    font: 20px 'Fira Sans Extra Condensed', sans-serif;
+    color: black;
+    text-align: left;
+}
+
+.infoObject div:not(:first-child) {
+    margin: 20px 0;
+
+}
+
+.infoObject div:first-child {
+    font-weight: bold;
+    font-size: 25px;
+    color: forestgreen;
+    text-decoration: underline forestgreen;
+}
+
+a {
+    padding-left: 5px;
+    color: forestgreen;
+}
+
+/*Footer*/
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 20px;
+    width: 100%;
+    background-color: forestgreen;
+    color: white;
+    font-size: 10px;
+    z-index: 900
+}
+
+footer div {
+    margin: 5px
+}
+
+.popup {
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+.delete {
+    position: absolute;
+    right: 1%;
+    cursor: pointer
+}
+
+.imgDelete {
+    width: 24px;
+    height: 24px;
+}
+
+.imgDelete:hover {
+    cursor: pointer
+}
+
+/*add object*/
+.formAdd {
+    position: fixed;
+    top: 40%;
+    left: 70%;
+    background-color: white;
+    border: forestgreen solid 1px;
+    z-index: 50000;
+    border-radius: 5px;
+    padding: 30px 10px 20px 10px;
+    color: forestgreen;
+}
+
+.formAdd label {
+    margin: 15px;
+}
+
+.formAdd label input {
+    width: 80%;
+    border: forestgreen solid 1px;
+    font-size: 20px;
+    outline: none;
+}
+
+.containerUser {
+    height: 55vh;
+    overflow: auto;
+}
+
+.changeColor {
+    color: blue
+}
+
+.left {
+    left: 10%
+}
+
+.exit {
+
+}
+
+@media (max-width: 1350px) {
+    .welcome {
+        font: 40px 'Lobster Two', cursive;
+        top: 15%;
+    }
+
+    .visualObject {
+        height: 150px;
+        width: 40%;
+        left: 31%;
+        top: 75%
+    }
+
+    .infoObject {
+        font: 15px 'Fira Sans Extra Condensed', sans-serif;
+    }
+
+    .infoObject div:not(:first-child) {
+        margin: 5px 0;
+
+    }
+
+    .infoObject div:first-child {
+        font-size: 15px;
+    }
+
+    .imgObject {
+        width: 100px;
+        height: 100px;
+        padding: 0 20px;
+    }
+
+    .buttonAdd {
+        width: 30%;
+        font-size: 10px;
+    }
+
+    .tabElement {
+        padding: 5px 5px;
+        border-bottom: 1px solid forestgreen;
+        cursor: default;
+    }
+
+    .tab {
+        height: 67vh;
+    }
+
+    .containerUser {
+        height: 57vh;
+    }
+
+    .logo {
+        font: 20px 'Lobster Two', cursive;
+    }
+
+    .tabElement img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .left {
+        left: 10%
+    }
+
+    .buttonRoute {
+        margin: 0
+    }
+
+    footer {
+        position: relative;
+    }
+}
+
+@media (max-width: 1000px) {
+    .mainField {
+        flex-direction: column;
+    }
+
+    .list {
+        width: 100%
+    }
+
+    .tab {
+        height: 100%;
+        overflow: visible;
+    }
+
+    .containerUser {
+        height: 100%;
+        overflow: visible;
+    }
+
+    .visualObject {
+        height: 180px;
+        position: relative;
+        width: 100%;
+        top: 120%;
+        left: 0;
+    }
+
+    #mapid {
+        height: 500px
+    }
+
+    .formEnter, .successReg {
+        width: 50%;
+        left: 27%;
+    }
+
+    .userList {
+        width: 100%
+    }
+
+    .containerUser {
+        height: 30vh;
+    }
+
+    .exit {
+        display: none
+    }
+
+    .formAdd {
+        width: 60%;
+        left: 30%;
+    }
+
+    .buttonAdd {
+        font-size: 15px;
+    }
+}
